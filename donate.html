@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>AidGo Contact</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  
+
+  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <h1>AidGo</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="work.html">Our Work</a></li>
+          <li class="dropdown"><a href=""><span>News</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="search-result.html">Trending</a></li>
+              <li><a href="#">Horn of Africa</a></li>
+              <li><a href="#">Yemen</a></li>
+              <li><a href="#">Maui</a></li>
+              <li><a href="#">Ukraine</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="category.html"><span>Get Involved</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Voluteer</a></li>
+              <li><a href="#">Start a Fundraiser</a></li>
+              <li><a href="#">Donate stock or mutual funds</a></li>
+              <li><a href="#">Employer matching</a></li>
+            </ul>
+          </li>
+
+          
+          <li class="dropdown"><a href="contact.html"><span>Contact</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Get Assistance</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <button class="mx-2">Donate</button>       
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="search-result.html" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+    <section id="contact" class="contact mb-5">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h1 class="page-title">Donation</h1>
+          </div>
+        </div>
+
+        
+
+        <div class="form mt-5">
+            <body>
+                <div class="donation-form">
+                    <h1>Make a Donation</h1>
+                    <div class="donation-amount">
+                        <label for="amount">Donation Amount:</label>
+                        <input type="number" id="amount" name="amount" placeholder="Enter amount (USD)" required>
+                    </div>
+                    <div class="payment-method">
+                        <label for="payment">Payment Method:</label>
+                        <select id="payment" name="payment">
+                            <option value="credit-card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </div>
+                    <div class="billing-info">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <button class="donate-button" onclick="makeDonation()" >Donate Now</button>
+                </div>
+                <script>
+                    // Function to make a donation to the smart contract
+                    async function makeDonation() {
+                      const amount = parseFloat(document.getElementById('amount').value);
+                      // Your donation logic here
+                
+                      // Show a pop-up confirmation
+                      alert('Transaction successful!');
+                
+                      // Optionally, you can reset the form or perform other actions after the donation
+                    }
+                  </script>
+        
+                <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+                <script>
+
+                    // Replace this with your actual smart contract address
+const programId = new solanaWeb3.PublicKey('DfWN9hcuMuxnsmD1dho6MMPch7hDKs3kS65ia7mRmt9g');
+// Replace this with your actual smart contract address
+
+// Function to donate to the smart contract
+async function donate(amount) {
+  try {
+    const fromWallet = solanaWeb3.Provider.getProvider().wallet;
+
+    if (!fromWallet) {
+      throw new Error("Wallet not connected");
+    }
+
+    const fromPublicKey = fromWallet.publicKey;
+
+    // Create a buffer for the instruction data
+    const instructionData = new Uint8Array(9);
+    instructionData[0] = 0; // Instruction 0: Donate
+    new DataView(instructionData.buffer).setFloat64(1, amount, true); // Convert amount to little-endian bytes
+
+    const transaction = new solanaWeb3.Transaction().add(
+      solanaWeb3.SystemProgram.transfer({
+        fromPubkey: fromPublicKey,
+        toPubkey: programId, // The smart contract's address
+        lamports: solanaWeb3.LAMPORTS_PER_SOL, // Specify an appropriate amount of lamports
+        instruction: new solanaWeb3.TransactionInstruction({
+          keys: [{ pubkey: fromPublicKey, isSigner: true, isWritable: true }],
+          programId: programId,
+          data: instructionData,
+        }),
+      })
+    );
+
+    // Sign and send the transaction
+    const signature = await solanaWeb3.sendAndConfirmTransaction(
+      solanaWeb3.Provider.getProvider().connection,
+      transaction,
+      [fromWallet]
+    );
+
+    console.log(`Donation transaction confirmed with signature: ${signature}`);
+    alert('Payment successful! Confirmation signature: ' + signature); // Show a confirmation message
+
+  } catch (error) {
+    console.error('Error donating:', error);
+  }
+}
+
+// Call the donate function when the "Donate Now" button is clicked
+document.querySelector('.donate-button').addEventListener('click', () => {
+  const amountInput = document.getElementById('amount');
+  const donationAmount = parseFloat(amountInput.value);
+  donate(donationAmount);
+});
+
+
+                </script>
+
+                
+                
+            </body>
+        </div><!-- Donate -->
+
+      </div>
+    </section>
+
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content">
+      <div class="container">
+
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <h3 class="footer-heading">About AidGo</h3>
+            <p>AidGo is meant to provide humintarian aid to charities and countries across the world. It is a combination of crowdfunding that provides secure and transparent distribution of resources.</p>
+            
+          </div>
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href="index.html"><i class="bi bi-chevron-right"></i>Work</a></li>
+              <li><a href="index.html"><i class="bi bi-chevron-right"></i>News</a></li>
+              <li><a href=""><i class="bi bi-chevron-right"></i> Get Involved</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">Categories</h3>
+            <ul class="footer-links list-unstyled">
+                <ul class="footer-links list-unstyled">
+                    <li><a href=""><i class="bi bi-chevron-right"></i> Horn of Africa</a></li>
+                    <li><a href=""><i class="bi bi-chevron-right"></i> Ukraine</a></li>
+                    <li><a href=""><i class="bi bi-chevron-right"></i> Climate Crisis</a></li>
+                    <li><a href=""><i class="bi bi-chevron-right"></i> Maui</a></li>
+                    <li><a href=""><i class="bi bi-chevron-right"></i> Yemen</a></li>
+                    <li><a href=""><i class="bi bi-chevron-right"></i> Lebanon</a></li>
+                    <li><a href=""><i class="bi bi-chevron-right"></i> Afghanistan</a></li>
+                  </ul>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="dr-alerts-cta-client alignfull">
+              <div class="styles__Wrapper-sc-120p6xf-0 kPruWz">
+                  <h2 class="styles__Heading-sc-120p6xf-2 igxhMN">Receive Alerts</h2>
+                  <div class="styles__InputWrapper-sc-120p6xf-3 GFhIV">
+                      <label for="email" class="styles__Label-sc-120p6xf-5 hCpKvR">Enter email</label>
+                      <input id="email" name="email" placeholder="Enter email" required="" type="email" class="styles__Input-sc-120p6xf-4 YOxAa">
+                  </div>
+                  <button type="button" class="styles__Button-sc-120p6xf-6 duMzNh">Sign Up</button>
+                  
+              </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

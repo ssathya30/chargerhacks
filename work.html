@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanitarian Aid Dashboard</title>
+
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="./leaflet/leaflet.css" />
+    <script src="./leaflet/leaflet-src.js.map"></script>
+    <script src="./leaflet/leaflet-src.js"></script>
+    <script src="./leaflet/leaflet-src.esm.js"></script>
+    <script src="./leaflet/leaflet-src.esm.js.map"></script>
+
+
+    <!-- Include your custom CSS for styling -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <h1>AidGo</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="work.html">Our Work</a></li>
+          <li class="dropdown"><a href=""><span>News</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="search-result.html">Trending</a></li>
+              <li><a href="#">Horn of Africa</a></li>
+              <li><a href="#">Yemen</a></li>
+              <li><a href="#">Maui</a></li>
+              <li><a href="#">Ukraine</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href=""><span>Get Involved</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Voluteer</a></li>
+              <li><a href="#">Start a Fundraiser</a></li>
+              <li><a href="#">Donate stock or mutual funds</a></li>
+              <li><a href="#">Employer matching</a></li>
+            </ul>
+          </li>
+
+          
+          <li class="dropdown"><a href="contact.html"><span>Contact</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Get Assistance</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <button class="mx-2">Donate</button>       
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="search-result.html" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+  <div class="dashboard">
+        <div class="summary">
+            <h2>Humanitarian Aid Summary</h2>
+            <p>Total Donations: $5,000</p>
+            <p>Donors: 100</p>
+            <p>Aid Distributed: Food, Water, Medicine</p>
+        </div>
+        <div class="map" id="map"></div>
+    </div>
+
+
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <!-- Include your custom JavaScript for the map -->
+    <script src="scripts.js"></script>
+
+    <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content">
+      <div class="container">
+
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <h3 class="footer-heading">About AidGo</h3>
+            <p>AidGo is meant to provide humintarian aid to charities and countries across the world. It is a combination of crowdfunding that provides secure and transparent distribution of resources.</p>
+            
+          </div>
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href="work.html"><i class="bi bi-chevron-right"></i>Our Work</a></li>
+              <li><a href="index.html"><i class="bi bi-chevron-right"></i>News</a></li>
+              <li><a href=""><i class="bi bi-chevron-right"></i> Get Involved</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">Categories</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href=""><i class="bi bi-chevron-right"></i> Horn of Africa</a></li>
+              <li><a href=""><i class="bi bi-chevron-right"></i> Ukraine</a></li>
+              <li><a href=""><i class="bi bi-chevron-right"></i> Climate Crisis</a></li>
+              <li><a href=""><i class="bi bi-chevron-right"></i> Maui</a></li>
+              <li><a href=""><i class="bi bi-chevron-right"></i> Yemen</a></li>
+              <li><a href=""><i class="bi bi-chevron-right"></i> Lebanon</a></li>
+              <li><a href=""><i class="bi bi-chevron-right"></i> Afghanistan</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="dr-alerts-cta-client alignfull">
+              <div class="styles__Wrapper-sc-120p6xf-0 kPruWz">
+                  <h2 class="styles__Heading-sc-120p6xf-2 igxhMN">Receive Alerts</h2>
+                  <div class="styles__InputWrapper-sc-120p6xf-3 GFhIV">
+                      <label for="email" class="styles__Label-sc-120p6xf-5 hCpKvR">Enter email</label>
+                      <input id="email" name="email" placeholder="Enter email" required="" type="email" class="styles__Input-sc-120p6xf-4 YOxAa">
+                  </div>
+                  <button type="button" class="styles__Button-sc-120p6xf-6 duMzNh">Sign Up</button>
+                  
+              </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
